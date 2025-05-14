@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+
+<html lamg="ja">
+
+<head>
+    <meta charset="UFT-8">
+    <meta name="viewport" content="width=device-width">
+
+    <title>Enjoy Coffee in Fukuoka</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+    <header>
+        <h1>Enjoy Coffee in Fukuoka</h1>
+    </header>
+
+    <div class="choice">
+        <p>あなたの好みのコーヒーを選んでください</p>
+
+        <select id="choicelist">
+            <option value="0">ここから選んで</option>
+            <option value="a">浅煎り(フルーティな酸味)が好き</option>
+            <option value="b">深煎り(苦みのある甘み)が好き</option>
+            <option value="c">ラテやスイーツを楽しみたい</option>
+        </select>
+
+    </div>
+
+
+    <div id="map">
+
+        <div id="imageArea"></div>
+
+    </div>
+
+    <script>
+        const choicelist = document.getElementById('choicelist');
+        const imageArea = document.getElementById('imageArea');
+
+        async function getImageLocations() {
+            try {
+                const response = await fetch('images.json');
+                if (!response.ok) {
+                    throw new Error('JSONファイルの読み込みに失敗しました。');
+                }
+                return response.json();
+            } catch (error) {
+                console.error(error);
+                return null;
+            }
+        }
+
+        choicelist.addEventListener('change', async () => {
+            const selectedValue = choicelist.value;
+            imageArea.innerHTML = ''; // 画像エリアをクリア
+
+            const imageLocations = await getImageLocations();
+            if (!imageLocations) {
+                imageArea.innerHTML = '<p>画像データの取得に失敗しました。</p>';
+                return;
+            }
+
+            if (imageLocations[selectedValue]) {
+                imageLocations[selectedValue].forEach((image) => {
+                    const img = document.createElement('img');
+                    img.src = image.src;
+                    img.classList.add('image-marker'); // 画像マーカーのクラスを追加
+                    img.style.top = image.top;
+                    img.style.left = image.left;
+                    img.style.width = image.width;
+                    img.style.height = image.height;
+                    img.dataset.href = image.href; // データ属性にURLを設定
+                    img.addEventListener('click', () => {
+                        window.open(img.dataset.href, '_blank'); // クリックされた画像のURLに遷移
+                    });
+                    imageArea.appendChild(img);
+                });
+            }
+        });
+
+    </script>
+</body>
+
+</html>

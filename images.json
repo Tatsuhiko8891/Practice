@@ -1,0 +1,56 @@
+{
+    "a": [
+        {
+            "src": "img/manlycoffee.jpg",
+            "top": "650px",
+            "left": "650px",
+            "width": "100px",
+            "height": "100px",
+            "href": "https://manly-coffee.com/"
+        },
+        {
+            "src": "img/coffeecounty.jpg",
+            "top": "160px",
+            "left": "750px",
+            "width": "100px",
+            "height": "100px",
+            "href": "https://coffeecounty.cc/"
+        },
+        {
+            "src": "img/tabula.jpg",
+            "top": "30px",
+            "left": "580px",
+            "width": "100px",
+            "height": "100px",
+            "href": "https://tabulacoffee.com/"
+        }
+    ],
+    "b": [
+        {
+            "src": "img/marugo.jpg",
+            "top": "100px",
+            "left": "100px",
+            "width": "100px",
+            "height": "100px",
+            "href": "https://cafemarugo.com/"
+        }
+    ],
+    "c": [
+        {
+            "src": "img/nooice.jpg",
+            "top": "20px",
+            "left": "400px",
+            "width": "100px",
+            "height": "100px",
+            "href": "https://www.nooice-cafe.com/"
+        },
+        {
+            "src": "img/goodupcoffee.jpg",
+            "top": "360px",
+            "left": "750px",
+            "width": "100px",
+            "height": "100px",
+            "href": "https://goodupcoffee.stores.jp/"
+        }
+    ]
+}

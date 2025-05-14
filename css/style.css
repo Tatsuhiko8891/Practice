@@ -1,0 +1,128 @@
+header {
+    background-image: url("header.jpg");
+    background-size: auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 10px;
+    color: #554205;
+    top: 0;
+    width: unset;
+    height: 200px;
+    width: 100%;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 80px;
+    padding: 20px;
+    text-shadow: 20px;
+    text-align: center;
+    font-family: 'Open Sans Condensed', sans-serif;
+}
+
+body {
+    position: inherit;
+    align-items: center;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    background-color: rgba(188, 120, 32, 0.06);
+}
+
+.introduce {
+    display: flex;
+    /* padding-top: 240px; */
+    margin: 10px auto;
+}
+
+.content {
+    display: flex;
+    justify-content: space-around;
+    max-width: 800px;
+    height: 100%;
+    margin: 0 auto;
+}
+
+.choice p {
+    float: left;
+    height: 20px;
+    margin: 10px;
+    margin-bottom: 10px;
+}
+
+section {
+    box-shadow: 0px 0px 3px rgba(0, 0, 0, .3);
+    width: 80%;
+    font-weight: bolder;
+    text-align: left;
+    margin: 20px;
+    position: relative;
+}
+
+
+.title {
+    font-size: 30px;
+    font-weight: bold;
+    text-align: left;
+}
+
+img {
+    width: 80%;
+    height: auto;
+    margin: 0;
+    vertical-align: top;
+}
+
+img:hover {
+    opacity: .5;
+}
+
+.background-image {
+    position: absolute;
+    /* containerを基準にして配置する */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    filter: opacity(40%);
+    /* 背景画像のみ透明度を適用 */
+    z-index: 1;
+    /* 文字より後ろに配置 */
+}
+
+
+
+.coffeemap {
+    margin: 20px;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.coffeemap:hover {
+    opacity: 1;
+}
+
+#choicelist {
+    position: relative;
+    margin: 10px;
+    font-size: 20px;
+}
+
+#map {
+    position: relative;
+    /* 相対配置 */
+    top: 10px;
+    width: 900px;
+    height: 900px;
+    background-image: url('コーヒー地図.jpg');
+    /* 地図画像のパス */
+    align-self: center;
+}
+
+.image-marker {
+    position: absolute;
+    /* 絶対配置 */
+}
